@@ -19,3 +19,6 @@ C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\o
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\ConfigPage.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Rodriguez.Mobile.csproj.CoreCompileInputs.cache
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Usuario\LoginPage.xaml.g.cs
+C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Usuario\PasswordRecoverPage.xaml.g.cs
+C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Usuario\RegisterPage.xaml.g.cs
