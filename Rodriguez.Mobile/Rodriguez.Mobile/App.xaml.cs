@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 using Rodriguez.Mobile.Services;
 using Rodriguez.Mobile.Views;
 using Rodriguez.Mobile.Views.Usuario;
@@ -12,6 +10,8 @@ namespace Rodriguez.Mobile
 
         public App()
         {
+            Current = this;
+
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();

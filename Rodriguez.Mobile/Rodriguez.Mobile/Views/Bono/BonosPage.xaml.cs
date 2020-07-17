@@ -1,6 +1,4 @@
-﻿using Rodriguez.Mobile.Classes;
-using Rodriguez.Mobile.Models;
-using Rodriguez.Mobile.Services;
+﻿using Rodriguez.Mobile.Services;
 using Rodriguez.Mobile.Views.Bono;
 using System;
 using System.Collections.ObjectModel;

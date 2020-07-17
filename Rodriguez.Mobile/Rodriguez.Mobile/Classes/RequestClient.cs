@@ -13,8 +13,7 @@ namespace Rodriguez.Mobile.Classes
             client.BaseAddress = new Uri(AppSettingsManager.Settings["BaseUrl"]);
             if (Application.Current.Properties.ContainsKey("token"))
             {
-                var authorizationKey = Convert.ToString(Application.Current.Properties["token"]);//tokenDictionary["access_token"];
-                Cliente cliente = Application.Current.Properties.ContainsKey("cliente") ? (Cliente)Application.Current.Properties["cliente"] : null;
+                var authorizationKey = Convert.ToString(Application.Current.Properties["token"]);
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + authorizationKey);
                 return client;

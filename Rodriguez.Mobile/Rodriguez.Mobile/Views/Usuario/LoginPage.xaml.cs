@@ -54,6 +54,14 @@ namespace Rodriguez.Mobile.Views.Usuario
                     if (response.IsSuccessStatusCode)
                     {
                         var result = response.Content.ReadAsStringAsync().Result;
+
+                        // Deserialize the JSON into a Dictionary<string, string>
+                        Dictionary<string, string> tokenDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
+                        Application.Current.Properties["token"] = tokenDictionary["access_token"];
+                        Application.Current.Properties["IsLoggedIn"] = true;
+                        Application.Current.Properties["usuario"] = usuario;
+
+                        Client = RequestClient.GetClient();
                         var clienteResponse = Client.GetAsync(AppSettingsManager.Settings["BaseUrl"] + "clienteU/" + usuario).Result;
                         var clienteContent = clienteResponse.Content.ReadAsStringAsync().Result;
                         var cliente = JsonConvert.DeserializeObject<Cliente>(clienteContent);
@@ -66,12 +74,12 @@ namespace Rodriguez.Mobile.Views.Usuario
                             return;
                         }
 
-                        // Deserialize the JSON into a Dictionary<string, string>
-                        Dictionary<string, string> tokenDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
-                        authorizationKey = tokenDictionary["access_token"];
-                        Application.Current.Properties["IsLoggedIn"] = true;
-                        Application.Current.Properties["token"] = authorizationKey;
-                        Application.Current.Properties["usuario"] = usuario;
+                        //// Deserialize the JSON into a Dictionary<string, string>
+                        //Dictionary<string, string> tokenDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
+                        //authorizationKey = tokenDictionary["access_token"];
+                        //Application.Current.Properties["IsLoggedIn"] = true;
+                        //Application.Current.Properties["token"] = authorizationKey;
+                        //Application.Current.Properties["usuario"] = usuario;
                         Application.Current.Properties["cliente"] = cliente;
                         Application.Current.MainPage = new MainPage();
 
