@@ -39,7 +39,6 @@
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                    <!--                    <iconize:IconImage HeightRequest="100" Icon="fa-shopping-cart" Grid.ColumnSpan="3" Grid.Row="0" IconColor="Red" WidthRequest="100" HorizontalOptions="Center" />-->
                 </StackLayout>
                 <StackLayout VerticalOptions="CenterAndExpand">
                     <Entry Placeholder="Usuario" Keyboard="Text" x:Name="txtUsuario" HorizontalTextAlignment="Center" />

@@ -5,10 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Rodriguez.Mobile.Views.ConfigPage"
-             Title="Configuración">
+             Title="Supermercado Rodriguez">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Salir" Clicked="Logout_Clicked" />
+        <ToolbarItem Command="{Binding Logout_Clicked}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                FontFamily="{StaticResource FontAwesomeSolid}"
+                Glyph="&#xf2f5;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
@@ -45,10 +52,18 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-
-                        <!--<iconize:IconImage x:Name="fb" HeightRequest="70" Icon="fa-facebook-square" Grid.Column="0"  WidthRequest="100" HorizontalOptions="Center" />-->
-                        <!--<iconize:IconImage x:Name="youtube" HeightRequest="100" Icon="fa-youtube-square" Grid.Column="1"  IconColor="Red" WidthRequest="100" HorizontalOptions="Center" />-->
-                        <!--<iconize:IconImage x:Name="twitter" HeightRequest="100" Icon="fa-twitter-square" Grid.Column="1" WidthRequest="100" HorizontalOptions="Center" />-->
+                        <Label Text="&#xf09a;" TextColor="#1979a9" FontFamily="{StaticResource FontAwesomeBrands}" 
+                               Grid.Column="0" FontSize="Header" HorizontalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Fb_Tapped" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="&#xf099;" TextColor="#44bcd8"  FontFamily="{StaticResource FontAwesomeBrands}" 
+                               Grid.Column="1" FontSize="Header" HorizontalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Twitter_Tapped" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
                     </Grid>
                 </StackLayout>
 

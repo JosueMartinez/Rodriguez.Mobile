@@ -1,10 +1,6 @@
 ﻿using Rodriguez.Mobile.Models;
 using Rodriguez.Mobile.Views.Bono;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -46,6 +42,16 @@ namespace Rodriguez.Mobile.Views
             Application.Current.Properties["usuario"] = null;
             Application.Current.Properties["cliente"] = null;
             //App.Current.Logout();
+        }
+
+        private void Fb_Tapped(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri("https://www.facebook.com/Supermercado-Rodriguez-561717717293234/"));
+        }
+        
+        private void Twitter_Tapped(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri("https://twitter.com/Sm_rodriguezs"));
         }
     }
 }
