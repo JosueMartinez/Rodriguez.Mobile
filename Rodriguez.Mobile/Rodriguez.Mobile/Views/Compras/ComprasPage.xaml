@@ -8,6 +8,10 @@
              xmlns:local="clr-namespace:Rodriguez.Mobile.Classes"
              Title="{Binding Title}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Agregar" Clicked="AgregarProducto" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:ChangeCompradoText x:Key="ChangeCompradoText"/>

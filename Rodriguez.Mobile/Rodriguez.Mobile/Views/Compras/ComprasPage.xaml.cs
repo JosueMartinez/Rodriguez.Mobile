@@ -1,5 +1,6 @@
 ﻿using Rodriguez.Mobile.ViewModels;
 using Rodriguez.Mobile.Views.Compras;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +15,7 @@ namespace Rodriguez.Mobile.Views
             BindingContext = new ComprasViewModel(Navigation);
         }
 
-        private void AgregarProducto(object obj)
+        private void AgregarProducto(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new AgregarProducto());
         }
