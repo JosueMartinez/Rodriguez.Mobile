@@ -56,7 +56,7 @@
                             <TapGestureRecognizer Tapped="GoToLogin_Tapped" NumberOfTapsRequired="1" />
                         </Label.GestureRecognizers>
                     </Label>
-                    <Button Text="Crear" TextColor="White" BackgroundColor="#33749C" Clicked="crearCuenta" />
+                    <Button Text="Crear" TextColor="White" BackgroundColor="#33749C" Clicked="CrearCuenta" />
                 </StackLayout>
             </StackLayout>
         </AbsoluteLayout>

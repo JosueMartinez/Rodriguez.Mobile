@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Rodriguez.Mobile.Views.Bono.BonoDetail">
+
+    <Label Text="Detalle Bono"/>
+    <Grid x:Name ="GridDetalleBono" Padding="10" Margin="10" RowSpacing="20">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--		Columnas-->
+        <Label x:Name="bonoIdLabel" Text="Bono #" Style="{StaticResource GridDetailLabel}" Grid.Row="0" Grid.Column="0"/>
+        <Label x:Name="montoLabel" Text="Monto" Style="{StaticResource GridDetailLabel}" Grid.Row="1" Grid.Column="0"/>
+        <Label x:Name="emitidoALabel" Text="Emitido A" Style="{StaticResource GridDetailLabel}" Grid.Row="2" Grid.Column="0"/>
+        <Label x:Name="metodoPagoLabel" Text="Método Pago" Style="{StaticResource GridDetailLabel}" Grid.Row="3" Grid.Column="0"/>
+        <Label x:Name="tasaLabel" Text="Tasa" Style="{StaticResource GridDetailLabel}" Grid.Row="4" Grid.Column="0"/>
+        <Label x:Name="montoRdLabel" Text="Monto RD$" Style="{StaticResource GridDetailLabel}" Grid.Row="5" Grid.Column="0"/>
+        <Label x:Name="costoCompraLabel" Text="Costo Compra" Style="{StaticResource GridDetailLabel}" Grid.Row="6" Grid.Column="0"/>
+        <Label x:Name="totalCobradoLabel" Text="Total Cobrado" Style="{StaticResource GridDetailLabel}" Grid.Row="7" Grid.Column="0"/>
+        <Label x:Name="estadoLabel" Text="Estado" Style="{StaticResource GridDetailLabel}" Grid.Row="8" Grid.Column="0"/>
+        <!--		Fin Columnas-->
+
+        <!--	Details	-->
+        <Label Text="{Binding id}" x:Name="bonoIdDetail"  Style="{StaticResource GridDetail}" Grid.Row="0" Grid.Column="1"/>
+        <Label Text="{Binding Monto}" Style="{StaticResource GridDetail}" Grid.Row="1" Grid.Column="1"/>
+        <Label Text="{Binding destinoCompleto}" x:Name="emitidoADetail" Style="{StaticResource GridDetail}" Grid.Row="2" Grid.Column="1"/>
+        <Label x:Name="metodoPagoDetail"  Style="{StaticResource GridDetail}" Grid.Row="3" Grid.Column="1"/>
+        <Label Text="{Binding tasa.valor}" x:Name="tasaDetail"  Style="{StaticResource GridDetail}" Grid.Row="4" Grid.Column="1"/>
+        <Label Text="{Binding MontoRD}" x:Name="montoRDDetail"  Style="{StaticResource GridDetail}" Grid.Row="5" Grid.Column="1"/>
+        <Label x:Name="costoCompraDetail" Style="{StaticResource GridDetail}" Grid.Row="6" Grid.Column="1"/>
+        <Label x:Name="totalCobradoDetail" Style="{StaticResource GridDetail}" Grid.Row="7" Grid.Column="1"/>
+        <Label Text="{Binding Estado}"  x:Name="estadoDetail" Style="{StaticResource GridDetail}" Grid.Row="8" Grid.Column="1"/>
+        <!--	Fin Details	-->
+    </Grid>
+</ContentPage>

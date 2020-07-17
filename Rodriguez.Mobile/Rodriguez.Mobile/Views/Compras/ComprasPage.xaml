@@ -4,12 +4,31 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Rodriguez.Mobile.Views.ComprasPage">
+             x:Class="Rodriguez.Mobile.Views.ComprasPage"
+             xmlns:local="clr-namespace:Rodriguez.Mobile.Classes"
+             Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ChangeCompradoText x:Key="ChangeCompradoText"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical">
+            <ListView ItemsSource="{Binding ListaCompraGrupos}" IsGroupingEnabled="True" GroupDisplayBinding="{Binding Key}" x:Name="ComprasDisplayList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nombre}">
+                            <TextCell.ContextActions>
+                                <MenuItem Command="{Binding Source={x:Reference ComprasDisplayList}, Path=BindingContext.CambioComprado }" CommandParameter="{Binding .}"
+                                          Text="{Binding Comprado, Converter={StaticResource ChangeCompradoText}}" />
+                                <MenuItem Command="{Binding Source={x:Reference ComprasDisplayList}, Path=BindingContext.Delete }"   CommandParameter="{Binding .}" Text="Eliminar" IsDestructive="True"/>
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

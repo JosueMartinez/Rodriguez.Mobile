@@ -5,7 +5,8 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
             xmlns:views="clr-namespace:Rodriguez.Mobile.Views"
-            x:Class="Rodriguez.Mobile.Views.MainPage">
+            x:Class="Rodriguez.Mobile.Views.MainPage"
+            Title="Supermercado Rodríguez">
 
     <TabbedPage.Children>
         <NavigationPage Title="Bonos">
