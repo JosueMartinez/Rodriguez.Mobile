@@ -1,7 +1,8 @@
-﻿using Rodriguez.Mobile.Models;
+﻿using Rodriguez.Mobile.Classes;
+using Rodriguez.Mobile.Models;
 using Rodriguez.Mobile.Views.Bono;
 using System;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -46,12 +47,12 @@ namespace Rodriguez.Mobile.Views
 
         private void Fb_Tapped(object sender, EventArgs e)
         {
-            Device.OpenUri(new Uri("https://www.facebook.com/Supermercado-Rodriguez-561717717293234/"));
+            Launcher.TryOpenAsync(new Uri(AppSettingsManager.Settings["FBProfile"]));
         }
         
         private void Twitter_Tapped(object sender, EventArgs e)
         {
-            Device.OpenUri(new Uri("https://twitter.com/Sm_rodriguezs"));
+            Launcher.TryOpenAsync(new Uri(AppSettingsManager.Settings["TwitterProfile"]));
         }
     }
 }

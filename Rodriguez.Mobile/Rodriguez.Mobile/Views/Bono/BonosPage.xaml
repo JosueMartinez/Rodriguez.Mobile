@@ -8,7 +8,7 @@
              Title="Supermercado Rodriguez">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding AddBono}">
+        <ToolbarItem Clicked="AddBono">
             <ToolbarItem.IconImageSource>
                 <FontImageSource
                 FontFamily="{StaticResource FontAwesomeSolid}"
