@@ -485,3 +485,4 @@ C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile.A
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile.Android\obj\Debug\90\flata\9D3BF09CE7596EDA.flata
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile.Android\obj\Debug\90\flata\15B32E0ECC5954AA.flata
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile.Android\obj\Debug\90\flata\D68A1D8F1A7FDF31.flata
+C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile.Android\obj\Debug\90\res\drawable\logo.jpg

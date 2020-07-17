@@ -158,4 +158,7 @@
       <Name>Rodriguez.Mobile</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo.jpg" />
+  </ItemGroup>
 </Project>

@@ -31,10 +31,10 @@
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
                                 <OnPlatform.iOS>
-                                    <FileImageSource File="logo.png" />
+                                    <FileImageSource File="logo.jpg" />
                                 </OnPlatform.iOS>
                                 <OnPlatform.Android>
-                                    <FileImageSource File="logo.png" />
+                                    <FileImageSource File="logo.jpg" />
                                 </OnPlatform.Android>
                             </OnPlatform>
                         </Image.Source>
