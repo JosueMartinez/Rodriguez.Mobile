@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -34,12 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Compras\AgregarProductoPage.xaml.cs">
-      <DependentUpon>AgregarProductoPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="Views\Bono\AddBonoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -49,7 +43,7 @@
     <EmbeddedResource Update="Views\Bono\BonosPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Compras\AgregarProductoPage.xaml">
+    <EmbeddedResource Update="Views\Compras\AgregarProducto.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Compras\ComprasPage.xaml">

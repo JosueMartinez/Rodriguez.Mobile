@@ -74,12 +74,6 @@ namespace Rodriguez.Mobile.Views.Usuario
                             return;
                         }
 
-                        //// Deserialize the JSON into a Dictionary<string, string>
-                        //Dictionary<string, string> tokenDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
-                        //authorizationKey = tokenDictionary["access_token"];
-                        //Application.Current.Properties["IsLoggedIn"] = true;
-                        //Application.Current.Properties["token"] = authorizationKey;
-                        //Application.Current.Properties["usuario"] = usuario;
                         Application.Current.Properties["cliente"] = cliente;
                         Application.Current.MainPage = new MainPage();
 
@@ -90,7 +84,7 @@ namespace Rodriguez.Mobile.Views.Usuario
                         Debug.WriteLine(response.StatusCode);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     await DisplayAlert("Error", "Ha ocurrido un error.  Por favor intente más tarde", "Ok");
                 }
