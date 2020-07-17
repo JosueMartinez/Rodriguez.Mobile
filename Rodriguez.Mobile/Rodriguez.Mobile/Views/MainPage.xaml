@@ -6,7 +6,8 @@
             mc:Ignorable="d"
             xmlns:views="clr-namespace:Rodriguez.Mobile.Views"
             x:Class="Rodriguez.Mobile.Views.MainPage"
-            Title="Supermercado Rodríguez">
+            Title="Supermercado Rodríguez"
+            BarBackgroundColor="Red">
 
     <TabbedPage.Children>
         <NavigationPage Title="Bonos">
