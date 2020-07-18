@@ -132,20 +132,19 @@ namespace Rodriguez.Mobile.Views.Bono
         }
 
         private async Task GetMonedasAsync()
-        {
-            
+        {            
             Task<IEnumerable<Moneda>> monedasTask = monedaService.GetAll();
             monedas = await monedasTask;
             IList monedasList = (IList)monedas;
-            //cbMoneda.ItemsSource = monedasList;
-            if (monedas != null && monedas.Count() > 0)
+            cbMoneda.ItemsSource = monedasList;
+            cbMoneda.ItemDisplayBinding = new Binding("Simbolo");
+            if (monedas != null && monedas.Any())
                 monedaSeleccionada = monedas.FirstOrDefault(x => x.Simbolo.Equals("USD"));
             else
             {
                 await DisplayAlert("", "No hay conexión para realizar las transacciones", "Ok");
                 await Navigation.PopAsync();
             }
-            //cbMoneda.SelectedItem = monedaSeleccionada;
         }
 
         void OnMontoChange(object sender, Xamarin.Forms.TextChangedEventArgs e)

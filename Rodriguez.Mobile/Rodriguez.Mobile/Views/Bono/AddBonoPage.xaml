@@ -54,7 +54,11 @@
                     <Entry x:Name="txtCedula" Keyboard="Numeric" Placeholder="Su Cédula" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" />
                     <Entry x:Name="txtCelular" Keyboard="Numeric" Placeholder="Un número de teléfono" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" />
                     <Entry x:Name="txtMonto" TextChanged="OnMontoChange" Text="{Binding Monto, Mode=TwoWay}" Keyboard="Numeric" Placeholder="¿Cuánto?" Grid.Row="4" Grid.Column="1" />
-                    <!--<controls:ExtendedPicker x:Name="cbMoneda" DisplayProperty="simbolo" SelectedIndexChanged="OnMonedaChange" Grid.Row="4" Grid.Column="2" />-->
+                    <Picker x:Name="cbMoneda"
+                        
+                        SelectedIndexChanged="OnMonedaChange" 
+                        Grid.Row="4" Grid.Column="2"
+                        Title="Moneda" />
                     <Label x:Name="lbTasaDia" TextColor="Gray" FontSize="Small" FontAttributes="Bold" Text="{Binding TasaDia}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand" />
                     <Label x:Name="lbMontoRD" Style="{StaticResource lbMontoRDStyle}" Text="{Binding MontoRD}" Grid.Row="6" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" />
                     <Button x:Name="btnComprar" Clicked="ComprarBono" Text="Comprar Bono" TextColor="White" BackgroundColor="#33749C" Grid.Row="8" Grid.ColumnSpan="3" WidthRequest="200" HorizontalOptions="CenterAndExpand" />
