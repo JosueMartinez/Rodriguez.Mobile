@@ -1,14 +1,10 @@
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Bono\AddBonoPage.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Bono\BonoDetail.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Bono\BonosPage.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Compras\ComprasPage.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\ConfigPage.xaml.g.cs
-C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
-C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
-C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Usuario\LoginPage.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Usuario\PasswordRecoverPage.xaml.g.cs
 C:\Users\josue\source\repos\Rodriguez.Mobile\Rodriguez.Mobile\Rodriguez.Mobile\obj\Debug\netstandard2.0\Views\Usuario\RegisterPage.xaml.g.cs
