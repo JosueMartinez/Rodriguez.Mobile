@@ -10,6 +10,6 @@ namespace Rodriguez.Mobile.Models
         public int MonedaId { get; set; }
         public double Valor { get; set; }
         public DateTime Fecha { get; set; }
-        public Moneda Moneda { get; set; }
+        public TasaMoneda Moneda { get; set; }
     }
 }

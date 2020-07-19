@@ -20,19 +20,17 @@ namespace Rodriguez.Mobile.Views.Bono
 			InitializeComponent();
 			inicializarComponentes(bono);
 			BindingContext = bono;
-			//Setting toolbar
-			//ToolbarItems.Add(new ToolbarItem("Go Back", null, () =>
-			//{
-			//	Debug.WriteLine("Go Back");
-			//}));
-
 		}
 
         private void inicializarComponentes(BonoModel bono)
-        {
-			//emitidoADetail.Text = b.destinoCompleto;
-			metodoPagoDetail.Text = "**** - 1756"; //TODO: obtener pago
+        {			
+			//metodoPagoDetail.Text = "**** - 1756"; //TODO: obtener pago
 												   //montoRdDetail.Text = 25.50.ToString();
 		}
-	}
+
+        private async void btnRegresar_Clicked(object sender, EventArgs e)
+        {
+			await Navigation.PopAsync();
+        }
+    }
 }

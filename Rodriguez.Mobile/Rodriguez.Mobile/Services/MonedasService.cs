@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Rodriguez.Mobile.Services
 {
-    public class MonedasService : IMonedasService<Moneda>
+    public class MonedasService : IMonedasService<TasaMoneda>
     {
         HttpClient Client { get; set; }
 
@@ -20,7 +20,7 @@ namespace Rodriguez.Mobile.Services
                 Client = RequestClient.GetClient();
         }
 
-        public async Task<Moneda> Get(int id)
+        public async Task<TasaMoneda> Get(int id)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace Rodriguez.Mobile.Services
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<Moneda>(content);
+                    return JsonConvert.DeserializeObject<TasaMoneda>(content);
                 }
 
                 return null;
@@ -40,15 +40,15 @@ namespace Rodriguez.Mobile.Services
             }
         }
 
-        public async Task<IEnumerable<Moneda>> GetAll()
+        public async Task<IEnumerable<TasaMoneda>> GetAll()
         {
             try
             {
-                var response = await Client.GetAsync(AppSettingsManager.Settings["BaseUrl"] + "monedas");
+                var response = await Client.GetAsync(AppSettingsManager.Settings["BaseUrl"] + "tasas");
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    var monedas = JsonConvert.DeserializeObject<List<Moneda>>(content);
+                    var monedas = JsonConvert.DeserializeObject<List<TasaMoneda>>(content);
                     return monedas;
                 }
 

@@ -16,10 +16,10 @@ namespace Rodriguez.Mobile.Views.Bono
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddBonoPage : ContentPage
     {
-        IEnumerable<Moneda> monedas;
+        IEnumerable<TasaMoneda> monedas;
         readonly MonedasService monedaService;
         readonly BonosService bonosService;
-        private Moneda monedaSeleccionada { get; set; }
+        private TasaMoneda monedaSeleccionada { get; set; }
         private Cliente Cliente { get; set; }
         private double tasaDia { get; set; }
         private double montoRD { get; set; }
@@ -60,7 +60,7 @@ namespace Rodriguez.Mobile.Views.Bono
 
             if (monedaSeleccionada != null)
             {
-                b.TasaId = monedaSeleccionada.Tasas.First().Id;
+                b.TasaId = monedaSeleccionada.Id;
             }
 
             if (ValidarBono(b))
@@ -91,27 +91,26 @@ namespace Rodriguez.Mobile.Views.Bono
                 //    b.PaypalId = paymentId;
 
                 //    //TODO agregar demas propiedades del pago de paypal (estado y metodo)
-                //    try
-                //    {
-                //        var bonoResult = bonosService.Buy(b);
-                //        if (bonoResult != null)
-                //        {
-
-                //            await DisplayAlert("Exito", "Se ha comprado el bono de forma exitosa", "Ok");
-                //            await Navigation.PopAsync();
-                //        }
-                //        else
-                //        {
-                //            await DisplayAlert("Error", "Ha ocurrido un error.  Intene de nuevo mas tarde", "Ok");
-                //        }
-                //        await IsRunning(false);
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        await IsRunning(false);
-                //        Debug.WriteLine(ex.ToString());
-                //        await DisplayAlert("Error", "Ha ocurrido un error.  Intene de nuevo mas tarde", "Ok");
-                //    }
+                try
+                {
+                    var bonoResult = bonosService.Buy(b);
+                    if (bonoResult != null)
+                    {
+                        await DisplayAlert("Exito", "Se ha comprado el bono de forma exitosa", "Ok");
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Ha ocurrido un error.  Intene de nuevo mas tarde", "Ok");
+                    }
+                    await IsRunning(false);
+                }
+                catch (Exception ex)
+                {
+                    await IsRunning(false);
+                    Debug.WriteLine(ex.ToString());
+                    await DisplayAlert("Error", "Ha ocurrido un error.  Intene de nuevo mas tarde", "Ok");
+                }
                 //}
 
             }
@@ -133,7 +132,7 @@ namespace Rodriguez.Mobile.Views.Bono
 
         private async Task GetMonedasAsync()
         {            
-            Task<IEnumerable<Moneda>> monedasTask = monedaService.GetAll();
+            Task<IEnumerable<TasaMoneda>> monedasTask = monedaService.GetAll();
             monedas = await monedasTask;
             IList monedasList = (IList)monedas;
             cbMoneda.ItemsSource = monedasList;
@@ -149,7 +148,7 @@ namespace Rodriguez.Mobile.Views.Bono
 
         void OnMontoChange(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-            double valorNuevo = 0.00;
+            double valorNuevo;
             double.TryParse(e.NewTextValue, out valorNuevo);
             montoRD = valorNuevo * tasaDia;
             lbMontoRD.Text = MontoRD;
@@ -157,23 +156,21 @@ namespace Rodriguez.Mobile.Views.Bono
 
         async void OnMonedaChange(object sender, System.EventArgs e)
         {
-            //if (cbMoneda.SelectedIndex != -1)
-            //{
-                //monedaSeleccionada = cbMoneda.SelectedItem as moneda;
-                ////Task<tasa> tasaTask = tasaManager.GetBySimbolo(mon.simbolo);
-                ////tasa = await tasaTask;
-                //tasaDia = monedaSeleccionada.tasas.First().valor;
-                //lbTasaDia.Text = TasaDia;
-                //montoRD = double.Parse(txtMonto.Text != null ? txtMonto.Text : "0.00") * tasaDia;
-                //lbMontoRD.Text = MontoRD;
-            //}
+            if (cbMoneda.SelectedIndex != -1)
+            {
+                monedaSeleccionada = cbMoneda.SelectedItem as TasaMoneda;
+                tasaDia = monedaSeleccionada.Valor;
+                lbTasaDia.Text = TasaDia;
+                montoRD = double.Parse(txtMonto.Text != null ? txtMonto.Text : "0.00") * tasaDia;
+                lbMontoRD.Text = MontoRD;
+            }
         }
 
         public string TasaDia
         {
             get
             {
-                return String.Format("Tasa del día: {0:0.00}", tasaDia);
+                return String.Format("Tasa del día: RD${0:0.00}", tasaDia);
             }
         }
 
