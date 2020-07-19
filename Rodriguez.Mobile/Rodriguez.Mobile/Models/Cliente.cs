@@ -15,5 +15,12 @@ namespace Rodriguez.Mobile.Models
         public string Cedula { get; set; }
         public string Celular { get; set; }
         public string Email { get; set; }
+
+
+        public string FormattedCelular
+        {
+            get => String.Format("{0:###-###-####}", Convert.ToInt64(Celular));
+            set { }
+        }
     }
 }

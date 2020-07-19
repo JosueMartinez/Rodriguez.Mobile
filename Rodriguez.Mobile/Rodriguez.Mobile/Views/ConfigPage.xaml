@@ -33,14 +33,14 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Label Text="Usuario: " Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
-                    <Entry IsEnabled="false" Text="{Binding Usuario}" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="1" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding Usuario}" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="1" HorizontalTextAlignment="Center" />
                     <Label Text="E-mail: " Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
-                    <Entry IsEnabled="false" Text="{Binding Email}" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding Email}" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" HorizontalTextAlignment="Center" />
                     <Label Text="Teléfono: " Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
-                    <Entry IsEnabled="false" Text="{Binding Celular}" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding FormattedCelular}" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" HorizontalTextAlignment="Center" />
                 </Grid>
                 <StackLayout VerticalOptions="EndAndExpand">
-                    <Label Text="Siganos en:" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" />
+                    <Label Text="Siganos" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" />
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand">
                     <Grid x:Name="GridSocial" Padding="10" Margin="10" RowSpacing="20">
