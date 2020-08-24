@@ -4,13 +4,50 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Rodriguez.Mobile.Views.BonosPage">
+             x:Class="Rodriguez.Mobile.Views.BonosPage"
+             Title="Supermercado Rodriguez">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddBono">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                FontFamily="{StaticResource FontAwesomeSolid}"
+                Glyph="&#xf067;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                x:Name="Message"/>
+            <Label x:Name="BonosListMessage" IsVisible="false" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="No exixten bonos para mostrar"/>
+            <ListView x:Name="BonosList" ItemTapped="ViewDetails" RowHeight="70" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" iOS="10,5" Android="10,5"/>
+                                </Grid.Padding>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label x:Name="monto" Text="{Binding MontoStr}" Style="{DynamicResource TitleListBono}" Grid.Row="0" Grid.ColumnSpan="2" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="nombre" Text="{Binding Destinatario}" FontSize="Small" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="estado" Text="{Binding Estado}" FontSize="Small" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" TextColor="Green"/>
+                                <Label x:Name="montoRD" Text="{Binding MontoRD}" FontSize="Small" Grid.Row="2" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="fecha" Text="{Binding FechaCompra, StringFormat='{0:dd-MMM-yyyy}'}" FontSize="Small" Grid.Row="2" Grid.Column="1" HorizontalOptions="End"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

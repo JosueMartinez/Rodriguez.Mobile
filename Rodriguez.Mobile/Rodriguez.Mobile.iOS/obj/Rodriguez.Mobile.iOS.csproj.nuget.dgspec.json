@@ -42,6 +42,18 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "SQLitePCLRaw.bundle_green": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "SQLitePCLRaw.core": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "SQLitePCLRaw.provider.sqlite3.ios_unified": {
+              "target": "Package",
+              "version": "[1.1.14, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.3.1, )"
@@ -49,6 +61,10 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.5.0.495, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.7.335, )"
             }
           }
         }
@@ -104,6 +120,12 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Fody": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -114,6 +136,18 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[3.2.8, )"
+            },
+            "SQLitePCLRaw.bundle_green": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "SQLitePCLRaw.core": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.3.1, )"
@@ -121,6 +155,10 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.5.0.495, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.7.335, )"
             }
           },
           "imports": [
@@ -133,7 +171,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

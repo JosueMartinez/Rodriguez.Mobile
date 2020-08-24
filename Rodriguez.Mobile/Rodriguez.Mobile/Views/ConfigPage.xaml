@@ -4,12 +4,74 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Rodriguez.Mobile.Views.ConfigPage">
+             x:Class="Rodriguez.Mobile.Views.ConfigPage"
+             Title="Supermercado Rodriguez">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding Logout_Clicked}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                FontFamily="{StaticResource FontAwesomeSolid}"
+                Glyph="&#xf2f5;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="20" Padding="20">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Grid x:Name="GridDetalleBono" Padding="10" Margin="10" RowSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Usuario: " Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                    <Label Text="{Binding Usuario}" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="1" HorizontalTextAlignment="Center" />
+                    <Label Text="E-mail: " Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+                    <Label Text="{Binding Email}" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" HorizontalTextAlignment="Center" />
+                    <Label Text="Teléfono: " Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+                    <Label Text="{Binding FormattedCelular}" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" HorizontalTextAlignment="Center" />
+                </Grid>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Label Text="Siganos" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Grid x:Name="GridSocial" Padding="10" Margin="10" RowSpacing="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <!--                            <ColumnDefinition Width="*" />-->
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="&#xf09a;" TextColor="#1979a9" FontFamily="{StaticResource FontAwesomeBrands}" 
+                               Grid.Column="0" FontSize="Header" HorizontalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Fb_Tapped" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="&#xf099;" TextColor="#44bcd8"  FontFamily="{StaticResource FontAwesomeBrands}" 
+                               Grid.Column="1" FontSize="Header" HorizontalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Twitter_Tapped" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </StackLayout>
+
+
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Label Text="v1.0" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

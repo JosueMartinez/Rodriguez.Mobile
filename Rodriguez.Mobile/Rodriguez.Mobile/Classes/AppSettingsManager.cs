@@ -32,7 +32,7 @@ namespace Rodriguez.Mobile.Classes
                     _secrets = JObject.Parse(json);
                 }
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 Debug.WriteLine("Unable to load secrets file");
             }

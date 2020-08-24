@@ -63,11 +63,15 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FileHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\FontAwesome5Brands.otf" />
+    <BundleResource Include="Resources\FontAwesome5Regular.otf" />
+    <BundleResource Include="Resources\FontAwesome5Solid.otf" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -132,6 +136,18 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.7.335</Version>
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.bundle_green">
+      <Version>2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.core">
+      <Version>2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.provider.sqlite3.ios_unified">
+      <Version>1.1.14</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
@@ -141,5 +157,8 @@
       <Project>{CAFD99F4-D917-44ED-A62F-37B5CB2913DB}</Project>
       <Name>Rodriguez.Mobile</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo.jpg" />
   </ItemGroup>
 </Project>
